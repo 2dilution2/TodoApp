@@ -36,29 +36,11 @@ function LonginComponent() {
             setShowErrorMessage(true)
         }
     }
-    
-    function SuccessMessageComponent() {
-    
-        if(showSuccessMessage){
-            return <div className="successMessage">Authentication Successfully</div>
-        } else {
-            return null
-        }
-    }
-
-    function ErrorMessageComponent() {
-    
-        if(showErrorMessage){
-            return <div className="errorMessage">Authentication Failure. Please check your credentials</div>
-        } else {
-            return null
-        }
-    }
 
     return(
         <div className="Login">
-            <SuccessMessageComponent />
-            <ErrorMessageComponent />
+            {showSuccessMessage && <div className="successMessage">Authentication Successfully</div>}
+            {showErrorMessage && <div className="errorMessage">Authentication Failure. Please check your credentials</div>}
             <div className="LoginForm">
                 <div>
                     <label>User Name : </label>
