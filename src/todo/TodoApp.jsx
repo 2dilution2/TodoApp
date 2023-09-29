@@ -7,10 +7,12 @@ export default function TodoApp() {
         <div className="TodoApp">
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={<LonginComponent/>}></Route>
-                    <Route path='/login' element={<LonginComponent/>}></Route>
-                    <Route path='/welcome/:username' element={<WelcomeComponent/>}></Route>
-                    <Route path='*' element={<ErrorComponent/>}></Route>
+                    <Route path='/' element={<LonginComponent/>} />
+                    <Route path='/login' element={<LonginComponent/>} />
+                    <Route path='/welcome/:username' element={<WelcomeComponent/>} />
+                    <Route path='/todos' element={<ListTodosComponent/>} />
+                    
+                    <Route path='*' element={<ErrorComponent/>} />
                 </Routes>
             </BrowserRouter>
         </div>
@@ -90,6 +92,30 @@ function ErrorComponent() {
             <div>
                 Apologies for the 404.
                 Contect Us 2dilution2@gmail.com
+            </div>
+        </div>
+    )
+}
+
+function ListTodosComponent() {
+    const todos = {id : 1, description : 'Leaen AWS'}
+
+    return(
+        <div className="ListTodosComponent">
+            <h1>Things You Want To Do!</h1>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>id</td>
+                            <td>description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <td>{todos.id}</td>
+                            <td>{todos.description}</td>
+                    </tbody>
+                </table>
             </div>
         </div>
     )
