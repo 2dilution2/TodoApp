@@ -96,27 +96,3 @@ function ErrorComponent() {
         </div>
     )
 }
-
-function ListTodosComponent() {
-    const todos = {id : 1, description : 'Learn AWS'}
-
-    return(
-        <div className="ListTodosComponent">
-            <h1>Things You Want To Do!</h1>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <td>id</td>
-                            <td>description</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                            <td>{todos.id}</td>
-                            <td>{todos.description}</td>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    )
-}
